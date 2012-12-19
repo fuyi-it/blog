@@ -1,0 +1,28 @@
+
+将RubyOnRails App部署到Heroku
+(2012-10-18 13:19:13)
+转载▼
+标签：
+杂谈
+	分类： RubyOnRails
+   Heroku是一个云应用平台，可以将ROR的应用部署在上面，跟AWS EC2的ruby环境部署差不多。Heroku提供了一个可视化添加Add-on的功能，可以很方便的添加一些你需要的服务。
+   1. 首先去http://www.heroku.com/ 注册一个帐号。
+   2. 安装Heroku toolbelt: https://toolbelt.heroku.com/     这里安装的是Ubuntu下面的。命令是：
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+   这个装好了会提供三个功能：Heruku命令行， Git, Foreman.
+   3. 装好后， 输入 $ heroku login   然后按照提示输入之前注册的用户名密码， 会提示生成ssh public key, 按 y 生成就可以了。
+   4. 假设你已经在rails app的目录下， 输入 $ heroku create 在 heroku创建这个app的 URL.  类似 xxxx.herokuapp.com   每个app都会有不同的前缀。
+   5. $ git push heroku master 用来把当前rails app 内容布置(deploy)到 heroku.
+   6. 第一次部署，heroku的数据库是空的。 所以还要运行 $ heroku run rake db:migrate 来创建数据库。
+   7. $ heroku run rake db:seed    --用来把数据释放到数据库。
+
+之后如果本地修改代码后想要在heroku同步， 可以用:
+$ git add .    --- 增加所有文件
+$ git commit -m "修改相关信息"    --- 本地确认代码修改
+或者用  $ git commit -a -m "修改相关信息"   代替上面两个
+$ git push heroku   把修改信息推送到heroku
+
+最后， 可以在heroku的“my account"下面设置一些相关信息，比如 xxxx.herokuapp.com的 xxxx前缀， github的信息，也可以将你自己的域名指向到xxxx.herokuapp.com.   这里推荐下cloudflare, 因为有些hosting提供商要改DNS解析服务器比较慢，麻烦， 可以用这个来直接改。
+
+Web开发：我希望得到的编程学习路线图
+http://blog.jobbole.com/15213/

@@ -1,0 +1,195 @@
+# Hobo internals translation file for English
+en:
+  hobo:
+    # default hobo pages translations
+    index:
+      # if you uncomment the following you will loose the automatic selection of dynamically pluralized nav-tabs
+      # if you need a different title you should implement a different way to select the tab on your own
+      #title: "%{model} Index"
+      heading: "%{model} "
+
+    new:
+      title: "新建 %{model}"
+      heading: "新建  %{model}"
+
+    show:
+      title: "%{model}"
+      heading: "%{model} %{name}"
+      back_link: "返回"
+      edit_link: "修改 %{model}"
+      new_link: "新的 %{model}"
+      add_form_heading: "增加  %{model}"
+
+    edit:
+      title: "修改 %{model}"
+      heading: "修改 %{model}"
+
+    index_for_owner:
+      title: "%{model} 为："
+      # be aware that you will loose the automatic Your <collection> / Jom's <collection>
+      # default output for User models
+      # you better define the heading.* in the specific collection namespace
+      #heading:
+      subheading: "For:"
+
+    new_for_owner:
+      title: "新建 %{model} 为："
+      heading: "新建 %{model}"
+      subheading: "为:"
+
+    login:
+      title: "登录"
+      heading: "登录"
+      email_address: &email_address "电子邮件"
+      name: "姓名"
+      password: "密码"
+      remember_me: "记住登录信息"
+      login: "登录"
+      signup: "注册"
+      forgot_password: &forgot_password "忘记密码?"
+
+    signup:
+      title: "注册"
+      heading: "新用户 注册"
+
+    forgot_password:
+      title: *forgot_password
+      heading: *forgot_password
+      text: "请输入你在注册此站点的 电子邮件 地址 。
+                                       我们将向此邮箱发送邮件，以便你重新设定你的密码。"
+      email_address: *email_address
+      send: "发送"
+
+    forgot_password_sent:
+      title: "忘记密码,发送  E-mail "
+      heading: "忘记密码,发送  E-mail "
+      text: "我们已经把重设密码的邮件发送到此邮箱： %{email_address}. 请及时检查你的邮箱。"
+
+    account_disabled_page:
+      title: "帐号不可用"
+      heading: "帐号不可用"
+      text: "此时，你的帐号不可用。"
+
+    account_page:
+      title: "你的帐号"
+      heading: "你的帐号"
+      new_password: "新帐号"
+      confirm_new_password: "确认新帐号"
+
+    # default hobo action translation
+    # The action with added model variable are new, create, delete, save,
+    # edit and back_to_parent
+    actions:
+      new: "新增 %{model}"
+      create: "建立 %{model}"
+      previous: "前一"
+      next: "下一"
+      add: "增加"
+      show_all: "显示所有 %{model}..."
+      delete: "删除 %{model}"
+      save: "保存 %{model}"
+      cancel: "取消"
+      edit: "修改 %{model}"
+      edit_control: "修改"
+      back: "返回 "
+      back_to_parent: "返回到 %{parent} %{name}"
+      send: "发送"
+      remove: "去除"
+      signup: "注册"
+      login: "登录"
+      logout: "注消"
+      logged_in_as: "登录为 %{name}"
+      account: "帐号"
+      save_account: "保存你的数据"
+
+    # default hobo message translation
+    messages:
+      create:
+        success: " %{model} 已经成功建立。"
+        error: "不能新建  %{model}。\n%{errors}"
+      creator:
+        error: "不能新建 %{name}。\n%{errors}"
+      transition:
+        error: "不能翻译  %{name}。\n%{errors}"
+      update:
+        no_attribute_error: "参数中没有更新的数据"
+        success: "%{model} 的更改已经被保存"
+        error: "出错了，不能保存更改。\\n%{errors}"
+      destroy:
+        success: " %{model} 已被删除 "
+      signup:
+        success: " 感谢您的注册!"
+        must_activate: " 在你登录之前，请先通过邮件激活，请检查你的邮箱中的激活邮件。"
+      login:
+        success: " 您已登录！"
+        error: " 请输入合法的用户名 %{login} 和密码！ "
+      logout: "你已经从本站登出！"
+      reset_password: " 您的密码已经重置。"
+      permission_denied: " 权限不够，非法访问！ "
+      not_found: " 不好意思，你请求的页面没有找到。 "
+      unauthenticated: " 你没有跢的权限 "
+      validate_password: " 密码至少6个字符，并 不能仅是小写字母 "
+      current_password_is_not_correct: " 不正确 "
+      you_are_site_admin: " 你现在是本站的超级管理员 "
+      you_signed_up: " 你已经在本站注册  "
+      none: " %{model} 不存在。"
+      confirm: " 你确定吗? "
+
+    # default hobo collection translation
+    collection:
+      count: &collection_count
+        zero: &no_model "没有 %{model}"
+        one: "有一个 %{model}."
+        other: "一共有 %{count} %{model}."
+      # you can use the following to completely override the collection heading
+      # be aware that you will loose the automatic Your <collection> / Jom's <collection>
+      # default output for User models
+      # you better define the heading.* in the specific collection namespace
+      #heading:
+      add_form_heading: "增加 %{model}"
+      empty_message: "没有记录可显示"
+
+    # default hobo form translation
+    form:
+      new:
+        heading: "新增 %{model}"
+      error:
+        heading: "发生了以下错误 :"
+      select_many:
+        prompt: "新增 %{model}"
+
+    # hobo support
+    support:
+      or: "或"
+      a: "一"
+      an: "一"
+
+    table_plus:
+      search: "查找"
+      submit_label: "搜索"
+
+    live_search:
+      label: "查找"
+      results_label: "查找结果"
+      close_button: "关闭"
+      no_results: "你的查询没有返回结果."
+
+    dev_user_changer:
+      guest: "访客"
+
+    admin:
+      subsite_name: "管理员"
+      invite_new_user: "邀请新用户"
+
+    subsite:
+      back_link: "浏览站点"
+
+    boolean_yes: "是"
+    boolean_no: "否"
+    password_hidden: "[隐藏的密码]"
+
+    in_place_editor:
+      click_to_edit: "(请单击以编辑)"
+
+    select_one_editor:
+      blank_message: *no_model

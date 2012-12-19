@@ -1,0 +1,50 @@
+<page title="主页">
+
+  <body: class="front-page"/>
+
+  <content:>
+    <header class="content-header hero-unit">
+      <h1> 付一 的博客</h1>
+      <section class="welcome-message">
+        <h3>欢迎来到 付一 的博客</h3>
+        <ul>
+          <li>付一 是一个营销人员，他喜欢让人们更便利更愉快。 </li>
+          <li>付一 是一个程序员，他因为爱好而写代码。 </li>
+
+        </ul>
+
+          <h3>付一 会在此记录他的程序生活</h3>
+        <ul>
+          <li>这是 付一 ruby on rails 写的一个web博客程序。 </li>
+          <li>付一 用到了hobo，一个基于ruby on rails快速开发框架。 </li>
+          <li>付一 会写出更多程序，以改变他的生活。 </li>
+        </ul>
+          <h3>付一 会在此记录他的营销历程</h3>
+        <ul>
+          <li>失败，或是成功 </li>
+          <li>经验，或是教训 </li>
+        </ul>
+        <h3>如果你更多的了解付一，请联系他：</h3>
+        <ul>
+          <li>电子邮件：i.it@tom.com </li>
+          <li>QQ：624449684 </li>
+        </ul>
+
+
+        <% if User.count == 0 -%>
+          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <form with="&this || User.new" without-cancel>
+            <field-list: fields="name, email_address, password, password_confirmation"/>
+            <submit: label="Register Administrator"/>
+          </form>
+        <% end -%>
+
+
+      </section>
+    </header>
+
+    <section class="content-body">
+    </section>
+  </content:>
+
+</page>

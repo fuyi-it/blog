@@ -1,0 +1,8 @@
+<show-page>
+   <append-content-header:>
+     <entry-info/>
+   </append-content-header:>
+  <field-list: replace>
+    <view:body_markdown/>
+  </field-list:>
+</show-page>
