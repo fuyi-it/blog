@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
 gem 'sqlite3'
 gem 'thin'
 gem 'maruku'
-gem 'mysql2'
+#gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -40,7 +40,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "hobo", "= 2.0.0.pre6"
+gem "hobo", "= 2.0.0.pre7"
 
 # Hobo has a lot of assets.   Stop cluttering the log in development mode.
 
@@ -48,8 +48,8 @@ gem "quiet_assets", :group => :development
 # Hobo's version of will_paginate is required.
 
 gem "will_paginate", :git => "git://github.com/Hobo/will_paginate.git"
-gem "hobo_jquery_ui", "2.0.0.pre6"
-gem "hobo_clean", "2.0.0.pre6"
-gem "hobo_bootstrap", "2.0.0.pre6"
+gem "hobo_jquery_ui", "2.0.0.pre7"
+gem "hobo_clean", "2.0.0.pre7"
+gem "hobo_bootstrap", "2.0.0.pre7"
 gem "jquery-ui-themes", "~> 0.0.4"
 

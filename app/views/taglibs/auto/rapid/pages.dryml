@@ -49,20 +49,20 @@
 
 
 <def tag="new-page" for="Comment">
-  <page merge title="#{ht 'comment.new.title', :default=>[' New 评论'] }">
+  <page merge title="#{ht 'comment.new.title', :default=>[' New Comment'] }">
     <body: class="new-page comment" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="comment.new.heading">
-          New 评论
+          New Comment
         </ht>
       </h2>
     </content-header:>
 
     <content-body: param>
       <form param>
-        <submit: label="#{ht 'comment.actions.create', :default=>['Create 评论']}"/>
+        <submit: label="#{ht 'comment.actions.create', :default=>['Create Comment']}"/>
       </form>
     </content-body:>
   </page>
@@ -70,15 +70,14 @@
 
 
 <def tag="show-page" for="Comment">
-  <page merge title="#{ht 'comment.show.title', :default=>['评论'], :name => name(:no_wrapper => true) }" without-aside >
+  <page merge title="#{ht 'comment.show.title', :default=>['Comment'], :name => name(:no_wrapper => true) }" without-aside >
 
     <body: class="show-page comment" param/>
 
     <content-header: param>
-      <a:entry param="parent-link">&laquo; <ht key="comment.actions.back_to_parent" parent="博文" name="&this">Back to <name/></ht></a:entry>
       <h2 param="heading">
         <ht key="comment.show.heading" name="#{name(:no_wrapper => true)}">
-          评论 <name/>
+          Comment <name/>
         </ht>
       </h2>
 
@@ -89,6 +88,7 @@
 
     <content-body: param>
       <view:body param="description" />
+      <field-list fields="entry" param/>
     </content-body:>
 
   </page>
@@ -96,17 +96,17 @@
 
 
 <def tag="edit-page" for="Comment">
-  <page merge title="#{ht 'comment.edit.title', :default=>['Edit 评论'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'comment.edit.title', :default=>['Edit Comment'], :name => name(:no_wrapper => true) }">
 
     <body: class="edit-page comment" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="comment.edit.heading" name="#{name(:no_wrapper => true)}">
-          Edit 评论
+          Edit Comment
         </ht>
       </h2>
-      <delete-button label="#{ht 'comment.actions.delete', :default=>['Remove This 评论']}" param/>
+      <delete-button label="#{ht 'comment.actions.delete', :default=>['Remove This Comment']}" param/>
     </content-header:>
 
     <content-body: param>
@@ -145,7 +145,7 @@
 
     <content-body: param>
       <a action="new" to="&model" param="new-link">
-        <ht key="entry.actions.new">New 博文</ht>
+        <ht key="entry.actions.new">New Entry</ht>
       </a>
 
       <page-nav param="top-page-nav"/>
@@ -161,20 +161,20 @@
 
 
 <def tag="new-page" for="Entry">
-  <page merge title="#{ht 'entry.new.title', :default=>[' New 博文'] }">
+  <page merge title="#{ht 'entry.new.title', :default=>[' New Entry'] }">
     <body: class="new-page entry" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="entry.new.heading">
-          New 博文
+          New Entry
         </ht>
       </h2>
     </content-header:>
 
     <content-body: param>
       <form param>
-        <submit: label="#{ht 'entry.actions.create', :default=>['Create 博文']}"/>
+        <submit: label="#{ht 'entry.actions.create', :default=>['Create Entry']}"/>
       </form>
     </content-body:>
   </page>
@@ -182,15 +182,14 @@
 
 
 <def tag="show-page" for="Entry">
-  <page merge title="#{ht 'entry.show.title', :default=>['博文'], :name => name(:no_wrapper => true) }" without-aside >
+  <page merge title="#{ht 'entry.show.title', :default=>['Entry'], :name => name(:no_wrapper => true) }" without-aside >
 
     <body: class="show-page entry" param/>
 
     <content-header: param>
-      <a:user param="parent-link">&laquo; <ht key="entry.actions.back_to_parent" parent="博友" name="&this">Back to <name/></ht></a:user>
       <h2 param="heading">
         <ht key="entry.show.heading" name="#{name(:no_wrapper => true)}">
-          博文 <name/>
+          Entry <name/>
         </ht>
       </h2>
 
@@ -200,7 +199,7 @@
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="entry.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit 博文
+          Edit Entry
         </ht>
       </a>
     </content-header:>
@@ -235,17 +234,17 @@
 
 
 <def tag="edit-page" for="Entry">
-  <page merge title="#{ht 'entry.edit.title', :default=>['Edit 博文'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'entry.edit.title', :default=>['Edit Entry'], :name => name(:no_wrapper => true) }">
 
     <body: class="edit-page entry" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="entry.edit.heading" name="#{name(:no_wrapper => true)}">
-          Edit 博文
+          Edit Entry
         </ht>
       </h2>
-      <delete-button label="#{ht 'entry.actions.delete', :default=>['Remove This 博文']}" param/>
+      <delete-button label="#{ht 'entry.actions.delete', :default=>['Remove This Entry']}" param/>
     </content-header:>
 
     <content-body: param>
@@ -323,7 +322,7 @@
 
     <content-body: param>
       <a action="new" to="&model" param="new-link">
-        <ht key="tag.actions.new">New 标签</ht>
+        <ht key="tag.actions.new">New Tag</ht>
       </a>
 
       <page-nav param="top-page-nav"/>
@@ -339,20 +338,20 @@
 
 
 <def tag="new-page" for="Tag">
-  <page merge title="#{ht 'tag.new.title', :default=>[' New 标签'] }">
+  <page merge title="#{ht 'tag.new.title', :default=>[' New Tag'] }">
     <body: class="new-page tag" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="tag.new.heading">
-          New 标签
+          New Tag
         </ht>
       </h2>
     </content-header:>
 
     <content-body: param>
       <form param>
-        <submit: label="#{ht 'tag.actions.create', :default=>['Create 标签']}"/>
+        <submit: label="#{ht 'tag.actions.create', :default=>['Create Tag']}"/>
       </form>
     </content-body:>
   </page>
@@ -360,14 +359,14 @@
 
 
 <def tag="show-page" for="Tag">
-  <page merge title="#{ht 'tag.show.title', :default=>['标签'], :name => name(:no_wrapper => true) }" without-aside >
+  <page merge title="#{ht 'tag.show.title', :default=>['Tag'], :name => name(:no_wrapper => true) }" without-aside >
 
     <body: class="show-page tag" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="tag.show.heading" name="#{name(:no_wrapper => true)}">
-          标签 <name/>
+          Tag <name/>
         </ht>
       </h2>
 
@@ -375,7 +374,7 @@
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="tag.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit 标签
+          Edit Tag
         </ht>
       </a>
     </content-header:>
@@ -388,17 +387,17 @@
 
 
 <def tag="edit-page" for="Tag">
-  <page merge title="#{ht 'tag.edit.title', :default=>['Edit 标签'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'tag.edit.title', :default=>['Edit Tag'], :name => name(:no_wrapper => true) }">
 
     <body: class="edit-page tag" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="tag.edit.heading" name="#{name(:no_wrapper => true)}">
-          Edit 标签
+          Edit Tag
         </ht>
       </h2>
-      <delete-button label="#{ht 'tag.actions.delete', :default=>['Remove This 标签']}" param/>
+      <delete-button label="#{ht 'tag.actions.delete', :default=>['Remove This Tag']}" param/>
     </content-header:>
 
     <content-body: param>
@@ -443,7 +442,7 @@
 
       <div param="new-form">
         <h3 param="new-form-heading">
-          <ht key="user.form.new.heading">New 博友</ht>
+          <ht key="user.form.new.heading">New User</ht>
         </h3>
         <form with="&@invalid_record || new_for_current_user(User)" param/>
       </div>
@@ -454,20 +453,20 @@
 
 
 <def tag="new-page" for="User">
-  <page merge title="#{ht 'user.new.title', :default=>[' New 博友'] }">
+  <page merge title="#{ht 'user.new.title', :default=>[' New User'] }">
     <body: class="new-page user" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="user.new.heading">
-          New 博友
+          New User
         </ht>
       </h2>
     </content-header:>
 
     <content-body: param>
       <form param>
-        <submit: label="#{ht 'user.actions.create', :default=>['Create 博友']}"/>
+        <submit: label="#{ht 'user.actions.create', :default=>['Create User']}"/>
       </form>
     </content-body:>
   </page>
@@ -475,14 +474,14 @@
 
 
 <def tag="show-page" for="User">
-  <page merge title="#{ht 'user.show.title', :default=>['博友'], :name => name(:no_wrapper => true) }" >
+  <page merge title="#{ht 'user.show.title', :default=>['User'], :name => name(:no_wrapper => true) }" >
 
     <body: class="show-page user" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="user.show.heading" name="#{name(:no_wrapper => true)}">
-          博友 <name/>
+          User <name/>
         </ht>
       </h2>
 
@@ -490,7 +489,7 @@
 
       <a action="edit" if="&can_edit?" param="edit-link">
         <ht key="user.actions.edit" name="#{name(:no_wrapper => true)}">
-          Edit 博友
+          Edit User
         </ht>
       </a>
     </content-header:>
@@ -524,17 +523,17 @@
 
 
 <def tag="edit-page" for="User">
-  <page merge title="#{ht 'user.edit.title', :default=>['Edit 博友'], :name => name(:no_wrapper => true) }">
+  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'], :name => name(:no_wrapper => true) }">
 
     <body: class="edit-page user" param/>
 
     <content-header: param>
       <h2 param="heading">
         <ht key="user.edit.heading" name="#{name(:no_wrapper => true)}">
-          Edit 博友
+          Edit User
         </ht>
       </h2>
-      <delete-button label="#{ht 'user.actions.delete', :default=>['Remove This 博友']}" param/>
+      <delete-button label="#{ht 'user.actions.delete', :default=>['Remove This User']}" param/>
     </content-header:>
 
     <content-body: param>
